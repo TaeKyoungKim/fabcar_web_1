@@ -4,8 +4,11 @@ var path  = require('path')
 var fs = require('fs')
 var bodyParser = require('body-parser')
 var cors = require('cors')
+var mongoose  = require('mongoose')
 require('dotenv').config()
 
+var MONGO_URL = process.env.M_URL
+mongoose.connect(MONGO_URL,{ useNewUrlParser: true,useUnifiedTopology: true  })
 var apiRouter  = require('./routes/Router')
 
 // view template  setting
