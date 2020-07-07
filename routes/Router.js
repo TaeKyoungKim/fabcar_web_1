@@ -11,7 +11,9 @@ router.get('/', async (req, res , next)=>{
 })
 
 router.get('/searchdata', async (req, res , next)=>{
-    var result  = await queryUtil.queryData()
+    console.log(req.query.search)
+    var searchdata = req.query.search
+    var result  = await queryUtil.queryData(searchdata)
     var resultData  = await JSON.parse(result)
     
     console.log(resultData)

@@ -48,7 +48,7 @@ async function query_all_data() {
     }
 }
 
-async function query_data() {
+async function query_data(searchdata) {
     try {
 
         // Create a new file system based wallet for managing identities.
@@ -75,7 +75,7 @@ async function query_data() {
         const contract = network.getContract('fabcar');
 
         // Evaluate the specified transaction.
-        const result = await contract.evaluateTransaction('queryCar', 'CAR4');
+        const result = await contract.evaluateTransaction('queryCar', searchdata);
         console.log(`Transaction has been evaluated, result is: ${result.toString()}`);
         return result.toString();
     } catch (error) {
