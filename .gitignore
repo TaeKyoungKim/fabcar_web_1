@@ -1,5 +1,2 @@
 /node_modules
 .env
-/chaincode
-/basic-network
-/fabcar

@@ -10,13 +10,13 @@ router.get('/', async (req, res , next)=>{
     res.render('index', {data:resultData})
 })
 
-router.get('/data', async (req, res , next)=>{
+router.get('/searchdata', async (req, res , next)=>{
     var result  = await queryUtil.queryData()
     var resultData  = await JSON.parse(result)
     
     console.log(resultData)
     // res.send(resultData)
-    res.render('data', {data:result})
+    res.render('searchdata', {data:result})
 })
 
 module.exports = router;
